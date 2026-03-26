@@ -1,0 +1,357 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.cabecalho-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #f5f5f5;
+    height: 80px;
+    width: 100%;
+}
+
+.cabecalho-principal-laranja {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:#ee4d2d;
+    height: 80px;
+    width: 100%;
+}
+
+.cabecalho-secundario{
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #d1cccc;
+    height: 45px;
+}
+
+.cabecalho-secundario-cinza{
+    display: flex;
+    justify-content: center;   
+    align-items: center;      
+    gap: 30px;                
+    height: 50px;             
+    width: 100%;              
+    color: #ee4d2d;
+    cursor: pointer;
+}
+
+.logo-xhopii {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-xhopii img {
+    height: 45px;
+}
+
+.entre-login {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.xhopii-padrao{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ee4d2d;
+}
+
+.xhopii-branca{
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.ajuda-login a {
+    text-decoration: none;
+    color: #ee4d2d;
+    font-size: 14px;
+}
+
+
+.main-login {
+    background-color: #ee4d2d;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-fundo-branco{
+    background-color: #ffffff;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.main-fundo-branco-section{
+    background-color: #ffffff;
+    width: 390px;
+    padding: 46px 36px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.main-login-section {
+    background-color: #ffffff;
+    width: 390px;
+    padding: 46px 36px;
+    border-radius: 5px;
+}
+
+
+.card-padrao {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+
+.input-padrao {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+
+.botao-padrao {
+    width: 100%;
+    padding: 6px;
+    background-color: #ee4d2d;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+
+.main-login-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.main-login-links a {
+    text-decoration: none;
+    color: #2600ffd6;
+}
+
+/* OU */
+.main-login-divisor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 13px;
+    margin: 15px 0;
+}
+
+.main-login-divisor::before, .main-login-divisor::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0 10px;
+}
+
+
+.main-login-social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.main-login-social button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+
+.main-login-fim {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.main-login-fim a {
+    color: #ee4d2d;
+    text-decoration: none;
+}
+
+.main-login-h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.botao-social{
+  
+    height: 42px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.botao-social img {
+    width: 18px;
+    height: 18px;
+}
+
+
+.rodape-principal {
+    background-color: #f5f5f5;
+    padding: 50px 10%;
+    font-size: 13px;
+    color: #555;
+}
+
+
+.rodape-colunas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.rodape-colunas h3 {
+    white-space: nowrap; /* não quebrar a linha*/
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.rodape-colunas p { 
+    white-space: nowrap;
+    margin-bottom: 9px;
+    cursor: pointer;
+}
+
+.rodape-colunas img {
+    max-width: 150px;
+}
+
+
+.social-icone {
+    width: 18px;
+    height: 18px; 
+}
+
+.qrcode {
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+
+footer hr {
+    border: none;
+    border-top: 1px solid #c3c3c3;
+    margin: 30px 0;
+}
+
+.rodape-copy {
+    text-align: center;
+    font-size: 12px;
+    color: #000000;
+}
+
+.seta-esquerda{
+    position: absolute; 
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.fotos-laterais img {
+    width: 80px;
+    cursor: pointer;
+    border: none;
+}
+
+.fotos-laterais {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.foto-lateral-destacada {
+    border: 2px solid #ee4d2d !important; 
+}
+
+.foto-lateral{
+    opacity: 0.7;
+}
+
+.lista-botoes, .lista-tamanho {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.botoes-padroes{
+    padding: 8px 15px;
+    background: white;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.botao-comprar{
+    width: 120px;
+    height: 50px;
+    color:#ffffff;
+    background-color:#ee4d2d;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.modelos{
+    margin-top: 8px;
+}
+
+.preco{
+    color:#ee4d2d;
+    font-size: 35px;
+    font: bold;
+    margin-top: 20px;    
+    margin-bottom: 10px;
+}
