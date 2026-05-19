@@ -30,12 +30,12 @@
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
             <h1 class="main-cadastro">Cadastrar Cupom</h1>
-            <form class="card-padrao-2">
-                <input class="input-padrao" type="text" placeholder="Código do cupom">
-                <input class="input-padrao" type="text" placeholder="Tipo de desconto">
-                <input class="input-padrao" type="text" placeholder="Valor do desconto">
-                <input class="input-padrao" type="text" placeholder="Data de validade">
-                <input class="input-padrao" type="number" placeholder="Quantidade máxima de usos">
+            <form class="card-padrao-2" action="../processamento/processamentoCupom.php" method="POST">
+                <input class="input-padrao" type="text" placeholder="Código do cupom" name="codigo">
+                <input class="input-padrao" type="text" placeholder="Tipo de desconto" name="tipoDesconto">
+                <input class="input-padrao" type="text" placeholder="Valor do desconto" name="valorDesconto">
+                <input class="input-padrao" type="text" placeholder="Data de validade" name="dataValidade">
+                <input class="input-padrao" type="number" placeholder="Quantidade máxima de usos" name="quantidadeUsos">
                 <button type="submit" class="botao-padrao">CADASTRAR</button>
                 </section>
                 

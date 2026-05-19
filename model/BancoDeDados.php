@@ -104,6 +104,25 @@ class BancoDeDados {
         $resultado = mysqli_query($conexao, $sql);
         return $resultado;
     }
+
+    public function cadastrarCupom($cupom) {
+        $conexao = $this->conectarBD();
+        $codigo = $cupom->getCodigo();
+        $tipoDesconto = $cupom->getTipoDesconto();
+        $valorDesconto = $cupom->getValorDesconto();
+        $dataValidade = $cupom->getDataValidade();
+        $quantidadeUsos = $cupom->getQuantidadeUsos();
+        $sql = "INSERT INTO cupom (codigo, tipoDesconto, valorDesconto, dataValidade, quantidadeUsos)
+                VALUES ('$codigo', '$tipoDesconto', '$valorDesconto', '$dataValidade', '$quantidadeUsos')";
+        mysqli_query($conexao, $sql);
+    }
+
+    public function retornarCupons() {
+        $conexao = $this->conectarBD();
+        $sql = "SELECT * FROM cupom";
+        $resultado = mysqli_query($conexao, $sql);
+        return $resultado;
+    }
 }
 
 ?>

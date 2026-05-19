@@ -1,3 +1,11 @@
+<?php
+require_once "../model/BancoDeDados.php";
+require_once "../controller/Controlador.php";
+
+$controlador = new Controlador();
+$cupons = $controlador->listarCupons();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -32,149 +40,22 @@
     <p class="titulo-descobertas"><strong>CUPONS</strong></p>
 
     <main>
-        <section class="grade-produtos-visualizar">
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
+            <section class="grade-produtos-visualizar">
+    <?php while($cupom = mysqli_fetch_assoc($cupons)) { ?>
+        <a href="#" class="link-produto">
+            <section class="card-visualizar">
+                <img src="../img/cupom.png" alt="Cupom">
+                <section class="corpo-card-visualizar">
+                    <p class="fabricante"><strong>Código: </strong><?php echo $cupom["codigo"]; ?></p>
+                    <p class="fabricante"><strong>Tipo de Desconto: </strong><?php echo $cupom["tipoDesconto"]; ?></p>
+                    <p class="fabricante"><strong>Valor do Desconto: </strong><?php echo $cupom["valorDesconto"]; ?></p>
+                    <p class="fabricante"><strong>Data de Validade: </strong><?php echo $cupom["dataValidade"]; ?></p>
+                    <p class="fabricante"><strong>Quantidade Máxima de Usos: </strong><?php echo $cupom["quantidadeUsos"]; ?></p>
                 </section>
-            </a>
-
-          <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cupom.png" alt="Cupom">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Código do Cupom: </strong>LIBERA10</p>
-                        <p class="fabricante"><strong>Tipo de Desconto: </strong>10% de desconto</p>
-                        <p class="fabricante"><strong>Valor do Desconto: </strong>10% do valor da compra</p>
-                        <p class="fabricante"><strong>Data de Validade: </strong>06/04/2026</p>
-                        <p class="fabricante"><strong>Quantidade máxima de uso: </strong>1</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-        </section>
+            </section>
+        </a>
+    <?php } ?>
+</section>
     </main>
 
     <footer class="rodape-principal">

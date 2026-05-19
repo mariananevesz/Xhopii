@@ -37,5 +37,13 @@ class Controlador {
     public function listarLojas() {
         return $this->bancoDeDados->retornarLoja();
     }
+
+    public function cadastrarCupom($cupom){
+        $this->bancoDeDados->cadastrarCupom($cupom);
+    }
+
+    public function listarCupons() {
+        return $this->bancoDeDados->retornarCupons();
+    }
 }
 ?>
