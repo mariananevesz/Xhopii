@@ -2,49 +2,50 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Cadastrar Cliente</title>
 </head>
 <body>
-    <header class="cabecalho-principal">
+    <header class="cabecalho-principal-laranja">
         <section class="logo-xhopii">
-            <img src="img/logo.png" alt="Xhopii">
-            <h1 class="xhopii-padrao">Xhopii</h1>
-            <h1 class="entre-login">Entre</h1> 
+            <img src="../img/logo.png" alt="Xhopii">
+            <h1 class="xhopii-branca">Xhopii</h1>
         </section>
-        <nav class="ajuda-login">
-            <a href="#">Precisa de ajuda?</a> 
+        <nav class="sair">
+            <a href="../view/login.php">Sair</a> 
         </nav>
     </header>
+    <header class="cabecalho-secundario-2">
+        <section class="cabecalho-secundario-laranja">
+            <p>Home</p>
+            <p>Cadastro Cliente</p>
+            <p>Cadastro Funcionário</p>
+            <p>Cadastro Produto</p>
+            <p>Ver Clientes</p>
+            <p>Ver Funcionários</p>
+            <p>Ver Produtos</p>
+        </section>
+    </header>
 
-    <main class="main-login">
-        <section class="main-login-section">
-            <h1 class="main-login-h1">Login</h1>
-            <form class="card-padrao">
+    <main class="main-fundo-cinza">
+        <section class="main-fundo-branco-section">
+            <h1 class="main-cadastro">Cadastrar Cliente</h1>
+            <form class="card-padrao-2">
+                <input class="input-padrao" type="text" placeholder="Nome">
+                <input class="input-padrao" type="text" placeholder="Sobrenome">
+                <input class="input-padrao" type="number" min="0" max="11" placeholder="CPF">
+                <input class="input-padrao" type="date">
+                <input class="input-padrao" type="tel" placeholder="Telefone">
                 <input class="input-padrao" type="email" placeholder="Email">
                 <input class="input-padrao" type="password" placeholder="Senha">
-                <a href="Home.html" class="botao-padrao">ENTRE</button></a>
-                <nav class="main-login-links">
-                    <a href="RedefinirSenha.html">Esqueci minha senha</a>
-                    <a href="#">Fazer login com SMS</a>
-                </nav>
-                <span class="main-login-divisor">OU</span>
-                <section class="main-login-social">
-                    <button type="button" class="botao-social">Facebook
-                        <img src="img/facebook-logo.png.png" alt="Xhopii">
-                    </button> 
-                        
-                    <button type="button" class="botao-social">Google
-                        <img src="img/google-logo.png" alt="Google">
-                    </button>
-
-                    <button type="button" class="botao-social">Apple
-                        <img src="img/apple-logo.png" alt="Apple">
-                    </button>
+                <p class="selecionar-foto">Selecionar foto de perfil:</p>
+                <label class="enviar-arquivo"> Escolher arquivo
+                    <input type="file">
+                </label>
+                <p class="nome-arquivo">Nenhum arquivo escolhido</p>
+                <a href="../view/home.php" class="botao-padrao">CADASTRAR</button></a>
                 </section>
-                <p class="main-login-fim">
-                    Novo na Xhopii? <a href="CadastrarCliente.html">Cadastrar</a>
-                </p>
+                
             </form>
         </section>
     </main>
@@ -79,8 +80,7 @@
         </section>
 
         <section>
-            <h3>SIGA-NOS</h3>
-                <p><img src="img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
+           <p><img src="img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
                 <p><img src="img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
                 <p><img src="img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
                 <p><img src="img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
@@ -100,5 +100,7 @@
     </p>
     </footer>
 
+</body>
+</html>
 </body>
 </html>

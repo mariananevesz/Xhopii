@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Redefinir Senha</title>
 </head>
 <body>
@@ -11,7 +11,7 @@
 <body>
     <header class="cabecalho-principal">
         <section class="logo-xhopii">
-            <img src="img/logo.png" alt="Xhopii">
+            <img src="../img/logo.png" alt="Xhopii">
             <h1 class="xhopii-padrao">Xhopii</h1>
             <h1 class="entre-login">Redefinir Senha</h1> 
         </section>
@@ -22,14 +22,11 @@
 
     <main class="main-fundo-branco">
         <section class="main-fundo-branco-section">
-            <a href="Login.html"><img src="img/seta-esquerda.png" alt="voltar" class="seta-esquerda"></a>
+            <a href="../view/login.php"><img src="../img/seta-esquerda.png" alt="voltar" class="seta-esquerda"></a>
             <h1 class="main-login-h1">Redefinir Senha</h1>
             <form class="card-padrao">
                 <input class="input-padrao" type="email" placeholder="Email">
-                <a href="Home.html" class="botao-padrao">ENVIAR</button></a>
-                
-                </section>
-                
+                <a href="../view/home.php" class="botao-padrao">ENVIAR</a>
             </form>
         </section>
     </main>
@@ -60,21 +57,21 @@
 
         <section>
             <h3>PAGAMENTO</h3>
-            <img src="img/pagamentos.png" alt="Pix">
+            <img src="../img/pagamentos.png" alt="Pix">
         </section>
 
         <section>
             <h3>SIGA-NOS</h3>
-            <p><img src="img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
-                <p><img src="img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
-                <p><img src="img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
-                <p><img src="img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
-                <p><img src="img/linkedIn-preto.png" alt="LinkedIn" class="social-icone"> LinkedIn</p>
+            <p><img src="../img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
+                <p><img src="../img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
+                <p><img src="../img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
+                <p><img src="../img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
+                <p><img src="../img/linkedIn-preto.png" alt="LinkedIn" class="social-icone"> LinkedIn</p>
         </section>
 
         <section>
             <h3>ATENDIMENTO AO CLIENTE</h3>
-            <img src="img/qrcode.png" alt="QR Code" class="qrcode">    
+            <img src="../img/qrcode.png" alt="QR Code" class="qrcode">    
         </section>
 
     </section>

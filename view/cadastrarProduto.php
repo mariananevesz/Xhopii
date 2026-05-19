@@ -2,17 +2,17 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Cadastrar Cliente</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Cadastrar Produto</title>
 </head>
 <body>
     <header class="cabecalho-principal-laranja">
         <section class="logo-xhopii">
-            <img src="img/logo.png" alt="Xhopii">
+            <img src="../img/logo.png" alt="Xhopii">
             <h1 class="xhopii-branca">Xhopii</h1>
         </section>
         <nav class="sair">
-            <a href="Login.html">Sair</a> 
+            <a href="../view/login.php">Sair</a> 
         </nav>
     </header>
     <header class="cabecalho-secundario-2">
@@ -29,21 +29,19 @@
 
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
-            <h1 class="main-cadastro">Cadastrar Cliente</h1>
-            <form class="card-padrao-2">
-                <input class="input-padrao" type="text" placeholder="Nome">
-                <input class="input-padrao" type="text" placeholder="Sobrenome">
-                <input class="input-padrao" type="number" min="0" max="11" placeholder="CPF">
-                <input class="input-padrao" type="date">
-                <input class="input-padrao" type="tel" placeholder="Telefone">
-                <input class="input-padrao" type="email" placeholder="Email">
-                <input class="input-padrao" type="password" placeholder="Senha">
-                <p class="selecionar-foto">Selecionar foto de perfil:</p>
+            <h1 class="main-cadastro">Cadastrar Produto</h1>
+            <form class="card-padrao-2" action="../processamento/processamento.php" method="POST">
+                <input class="input-padrao" type="text" name="nome" placeholder="Nome">
+                <input class="input-padrao" type="text" name="fabricante" placeholder="Fabricante">
+                <input class="input-padrao" type="text" name="descricao" placeholder="Descrição">
+                <input class="input-padrao" type="number" name="valor" placeholder="Valor">
+                <input class="input-padrao" type="number" name="quantidade" placeholder="Quantidade">
+                <p class="selecionar-foto">Selecionar foto do produto:</p>
                 <label class="enviar-arquivo"> Escolher arquivo
                     <input type="file">
                 </label>
                 <p class="nome-arquivo">Nenhum arquivo escolhido</p>
-                <a href="Home.html" class="botao-padrao">CADASTRAR</button></a>
+                <button type="submit" class="botao-padrao">CADASTRAR</button>
                 </section>
                 
             </form>
@@ -76,20 +74,21 @@
 
         <section>
             <h3>PAGAMENTO</h3>
-            <img src="img/pagamentos.png" alt="Pix">
+            <img src="../img/pagamentos.png" alt="Pix">
         </section>
 
         <section>
-           <p><img src="img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
-                <p><img src="img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
-                <p><img src="img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
-                <p><img src="img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
-                <p><img src="img/linkedIn-preto.png" alt="LinkedIn" class="social-icone"> LinkedIn</p>
+            <h3>SIGA-NOS</h3>
+            <p><img src="../img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
+                <p><img src="../img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
+                <p><img src="../img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
+                <p><img src="../img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
+                <p><img src="../img/linkedIn-preto.png" alt="LinkedIn" class="social-icone"> LinkedIn</p>
         </section>
 
         <section>
             <h3>ATENDIMENTO AO CLIENTE</h3>
-            <img src="img/qrcode.png" alt="QR Code" class="qrcode">    
+            <img src="../img/qrcode.png" alt="QR Code" class="qrcode">    
         </section>
 
     </section>

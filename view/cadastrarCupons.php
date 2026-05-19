@@ -2,17 +2,17 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Cadastrar Cupons</title>
 </head>
 <body>
     <header class="cabecalho-principal-laranja">
         <section class="logo-xhopii">
-            <img src="img/logo.png" alt="Xhopii">
+            <img src="../img/logo.png" alt="Xhopii">
             <h1 class="xhopii-branca">Xhopii</h1>
         </section>
         <nav class="sair">
-            <a href="Login.html">Sair</a> 
+            <a href="../view/login.php">Sair</a> 
         </nav>
     </header>
     <header class="cabecalho-secundario-2">
@@ -29,18 +29,13 @@
 
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
-            <h1 class="main-cadastro">Cadastrar Funcionário</h1>
+            <h1 class="main-cadastro">Cadastrar Cupom</h1>
             <form class="card-padrao-2">
-                <input class="input-padrao" type="text" placeholder="Nome">
-                <input class="input-padrao" type="text" placeholder="Fabricante">
-                <input class="input-padrao" type="text" placeholder="Descrição">
-                <input class="input-padrao" type="number" placeholder="Valor">
-                <input class="input-padrao" type="number" placeholder="Quantidade">
-                <p class="selecionar-foto">Selecionar foto do produto:</p>
-                <label class="enviar-arquivo"> Escolher arquivo
-                    <input type="file">
-                </label>
-                <p class="nome-arquivo">Nenhum arquivo escolhido</p>
+                <input class="input-padrao" type="text" placeholder="Código do cupom">
+                <input class="input-padrao" type="text" placeholder="Tipo de desconto">
+                <input class="input-padrao" type="text" placeholder="Valor do desconto">
+                <input class="input-padrao" type="text" placeholder="Data de validade">
+                <input class="input-padrao" type="number" placeholder="Quantidade máxima de usos">
                 <button type="submit" class="botao-padrao">CADASTRAR</button>
                 </section>
                 
@@ -79,7 +74,7 @@
 
         <section>
             <h3>SIGA-NOS</h3>
-            <p><img src="img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
+           <p><img src="img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
                 <p><img src="img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
                 <p><img src="img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
                 <p><img src="img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>

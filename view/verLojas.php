@@ -2,18 +2,18 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Visualização de Lojas</title>
 </head>
 <body>
 
     <header class="cabecalho-principal-laranja">
         <section class="logo-xhopii">
-            <img src="img/logo.png" alt="Xhopii">
+            <img src="../img/logo.png" alt="Xhopii">
             <h1 class="xhopii-branca">Xhopii</h1>
         </section>
         <nav class="sair">
-            <a href="Login.html">Sair</a>
+            <a href="../view/login.php">Sair</a>
         </nav>
     </header>
 
@@ -183,21 +183,21 @@
 
             <section>
                 <h3>PAGAMENTO</h3>
-                <img src="img/pagamentos.png" alt="Métodos de Pagamento">
+                <img src="../img/pagamentos.png" alt="Métodos de Pagamento">
             </section>
 
             <section>
                 <h3>SIGA-NOS</h3>
-                <p><img src="img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
-                <p><img src="img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
-                <p><img src="img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
-                <p><img src="img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
-                <p><img src="img/linkedIn-preto.png" alt="LinkedIn" class="social-icone"> LinkedIn</p>
+                <p><img src="../img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
+                <p><img src="../img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
+                <p><img src="../img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
+                <p><img src="../img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
+                <p><img src="../img/linkedIn-preto.png" alt="LinkedIn" class="social-icone"> LinkedIn</p>
             </section>
 
             <section>
                 <h3>ATENDIMENTO AO CLIENTE</h3>
-                <img src="img/qrcode.png" alt="QR Code" class="qrcode">
+                <img src="../img/qrcode.png" alt="QR Code" class="qrcode">
                 <p>Google Play</p>
                 <p>App Store</p>
             </section>
