@@ -30,22 +30,20 @@
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
             <h1 class="main-cadastro">Cadastrar Cliente</h1>
-            <form class="card-padrao-2">
-                <input class="input-padrao" type="text" placeholder="Nome">
-                <input class="input-padrao" type="text" placeholder="Sobrenome">
-                <input class="input-padrao" type="number" min="0" max="11" placeholder="CPF">
-                <input class="input-padrao" type="date">
-                <input class="input-padrao" type="tel" placeholder="Telefone">
-                <input class="input-padrao" type="email" placeholder="Email">
-                <input class="input-padrao" type="password" placeholder="Senha">
+            <form class="card-padrao-2" action="../processamento/processamentoCliente.php" method="POST">
+                <input class="input-padrao" type="text" placeholder="Nome" name="nome">
+                <input class="input-padrao" type="text" placeholder="Sobrenome" name="sobrenome">
+                <input class="input-padrao" type="text" maxlength="14" placeholder="CPF" name="cpf">
+                <input class="input-padrao" type="date" name="dataNascimento">
+                <input class="input-padrao" type="tel" placeholder="Telefone" name="telefone">
+                <input class="input-padrao" type="email" placeholder="Email" name="email">
+                <input class="input-padrao" type="password" placeholder="Senha" name="senha">
                 <p class="selecionar-foto">Selecionar foto de perfil:</p>
                 <label class="enviar-arquivo"> Escolher arquivo
                     <input type="file">
                 </label>
                 <p class="nome-arquivo">Nenhum arquivo escolhido</p>
-                <a href="../view/home.php" class="botao-padrao">CADASTRAR</button></a>
-                </section>
-                
+                <button type="submit" class="botao-padrao">CADASTRAR</button>               
             </form>
         </section>
     </main>
@@ -100,7 +98,5 @@
     </p>
     </footer>
 
-</body>
-</html>
 </body>
 </html>

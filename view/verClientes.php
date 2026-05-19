@@ -1,3 +1,11 @@
+<?php
+require_once "../model/BancoDeDados.php";
+require_once "../controller/Controlador.php";
+
+$controlador = new Controlador();
+$clientes = $controlador->listarClientes();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -32,148 +40,23 @@
     <p class="titulo-descobertas"><strong>CLIENTES</strong></p>
 
     <main>
-        <section class="grade-produtos-visualizar">
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
+       <section class="grade-produtos-visualizar">
+    <?php while($cliente = mysqli_fetch_assoc($clientes)) { ?>
+        <a href="#" class="link-produto">
+            <section class="card-visualizar">
+                <img src="../img/cliente.png" alt="Cliente">
+                <section class="corpo-card-visualizar">
+                    <p class="fabricante"><strong>Nome: </strong><?php echo $cliente["nome"]; ?></p>
+                    <p class="fabricante"><strong>Sobrenome: </strong><?php echo $cliente["sobrenome"]; ?></p>
+                    <p class="fabricante"><strong>CPF: </strong><?php echo $cliente["cpf"]; ?></p>
+                    <p class="fabricante"><strong>Data de Nascimento: </strong><?php echo $cliente["dataNascimento"]; ?></p>
+                    <p class="fabricante"><strong>Telefone: </strong><?php echo $cliente["telefone"]; ?></p>
+                    <p class="fabricante"><strong>Email: </strong><?php echo $cliente["email"]; ?></p>
                 </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/cliente.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Murilo Gabriel Vicentim Ferreira</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Nascimento: </strong>14/06/2000</p>
-                        <p class="fabricante"><strong>Email: </strong>murilo.gabriel@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                    </section>
-                    
-                </section>
-            </a>       
-        </section>
+            </section>
+        </a>
+    <?php } ?>
+</section>
     </main>
 
     <footer class="rodape-principal">

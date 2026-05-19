@@ -30,7 +30,7 @@
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
             <h1 class="main-cadastro">Cadastrar Produto</h1>
-            <form class="card-padrao-2" action="../processamento/processamento.php" method="POST">
+            <form class="card-padrao-2" action="../processamento/processamentoProduto.php" method="POST">
                 <input class="input-padrao" type="text" name="nome" placeholder="Nome">
                 <input class="input-padrao" type="text" name="fabricante" placeholder="Fabricante">
                 <input class="input-padrao" type="text" name="descricao" placeholder="Descrição">
@@ -99,7 +99,5 @@
     </p>
     </footer>
 
-</body>
-</html>
 </body>
 </html>

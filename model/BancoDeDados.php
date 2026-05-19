@@ -41,6 +41,27 @@ class BancoDeDados {
         $resultado = mysqli_query($conexao, $sql);
         return $resultado;
     }
+
+    public function inserirCliente($cliente){
+        $conexao = $this->conectarBD();
+        $nome = $cliente->getNome();
+        $sobrenome = $cliente->getSobrenome();
+        $cpf = $cliente->getCpf();
+        $dataNascimento = $cliente->getDataNascimento();
+        $telefone = $cliente->getTelefone();
+        $email = $cliente->getEmail();
+        $senha = $cliente->getSenha();
+        $sql = "INSERT INTO cliente (nome, sobrenome, cpf, dataNascimento, telefone, email, senha)
+                VALUES ('$nome', '$sobrenome', '$cpf', '$dataNascimento', '$telefone', '$email', '$senha')";
+        mysqli_query($conexao, $sql);
+    }
+
+    public function retornarClientes() {
+        $conexao = $this->conectarBD();
+        $sql = "SELECT * FROM cliente";
+        $resultado = mysqli_query($conexao, $sql);
+        return $resultado;
+    }
 }
 
 ?>

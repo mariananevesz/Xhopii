@@ -13,5 +13,13 @@ class Controlador {
     public function listarProdutos() {
       return $this->bancoDeDados->retornarProdutos();
     }
+
+    public function cadastrarCliente($cliente){
+        $this->bancoDeDados->inserirCliente($cliente);
+    }
+
+    public function listarClientes() {
+        return $this->bancoDeDados->retornarClientes();
+    }
 }
 ?>
