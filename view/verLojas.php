@@ -1,3 +1,11 @@
+<?php
+require_once "../model/BancoDeDados.php";
+require_once "../controller/Controlador.php";
+
+$controlador = new Controlador();
+$lojas = $controlador->listarLojas();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -32,128 +40,21 @@
     <p class="titulo-descobertas"><strong>LOJAS</strong></p>
 
     <main>
-        <section class="grade-produtos-visualizar">
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
+       <section class="grade-produtos-visualizar">
+    <?php while($loja = mysqli_fetch_assoc($lojas)) { ?>
+        <a href="#" class="link-produto">
+            <section class="card-visualizar">
+                <section class="corpo-card-visualizar">
+                    <p class="fabricante"><strong>Nome: </strong><?php echo $loja["nome"]; ?></p>
+                    <p class="fabricante"><strong>CNPJ: </strong><?php echo $loja["cnpj"]; ?></p>
+                    <p class="fabricante"><strong>Endereço: </strong><?php echo $loja["endereco"]; ?></p>
+                    <p class="fabricante"><strong>Telefone: </strong><?php echo $loja["telefone"]; ?></p>
+                    <p class="fabricante"><strong>Email: </strong><?php echo $loja["email"]; ?></p>
                 </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome da Loja: </strong>Xhopii</p>
-                        <p class="fabricante"><strong>CNPJ: </strong>12.345.678/0001-90</p>
-                        <p class="fabricante"><strong>Endereço: </strong>Rua Exemplo, 123</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Email: </strong>contato@xhopii.com</p>
-                    </section>
-                </section>
-            </a>
-        </section>
+            </section>
+        </a>
+    <?php } ?>
+</section>
     </main>
 
     <footer class="rodape-principal">

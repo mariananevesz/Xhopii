@@ -29,5 +29,13 @@ class Controlador {
     public function listarFuncionarios() {
         return $this->bancoDeDados->retornarFuncionarios();
     }
+
+    public function cadastrarLoja($loja){
+        $this->bancoDeDados->cadastrarLoja($loja);
+    }
+
+    public function listarLojas() {
+        return $this->bancoDeDados->retornarLoja();
+    }
 }
 ?>

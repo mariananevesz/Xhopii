@@ -85,6 +85,25 @@ class BancoDeDados {
         $resultado = mysqli_query($conexao, $sql);
         return $resultado;
     }
+
+    public function cadastrarLoja($loja) {
+        $conexao = $this->conectarBD();
+        $nome = $loja->getNome();
+        $cnpj = $loja->getCnpj();
+        $endereco = $loja->getEndereco();
+        $telefone = $loja->getTelefone();
+        $email = $loja->getEmail();
+        $sql = "INSERT INTO loja (nome, cnpj, endereco, telefone, email)
+                VALUES ('$nome', '$cnpj', '$endereco', '$telefone', '$email')";
+        mysqli_query($conexao, $sql);
+    }
+
+    public function retornarLoja() {
+        $conexao = $this->conectarBD();
+        $sql = "SELECT * FROM loja";
+        $resultado = mysqli_query($conexao, $sql);
+        return $resultado;
+    }
 }
 
 ?>

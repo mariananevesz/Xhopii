@@ -30,12 +30,12 @@
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
             <h1 class="main-cadastro">Cadastrar Loja</h1>
-            <form class="card-padrao-2">
-                <input class="input-padrao" type="text" placeholder="Nome da loja">
-                <input class="input-padrao" type="number" placeholder="CNPJ">
-                <input class="input-padrao" type="email" placeholder="Email">
-                <input class="input-padrao" type="number" placeholder="Telefone">
-                <input class="input-padrao" type="text" placeholder="Endereço">
+            <form class="card-padrao-2" action="../processamento/processamentoLoja.php" method="POST">
+                <input class="input-padrao" type="text" placeholder="Nome da loja" name="nome">
+                <input class="input-padrao" type="number" placeholder="CNPJ" name="cnpj">
+                <input class="input-padrao" type="email" placeholder="Email" name="email">
+                <input class="input-padrao" type="number" placeholder="Telefone" name="telefone">
+                <input class="input-padrao" type="text" placeholder="Endereço" name="endereco">
                 <button type="submit" class="botao-padrao">CADASTRAR</button>
                 </section>
                 
