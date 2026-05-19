@@ -30,16 +30,16 @@
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
             <h1 class="main-cadastro">Cadastrar Funcionário</h1>
-            <form class="card-padrao-2">
-                <input class="input-padrao" type="text" placeholder="Nome">
-                <input class="input-padrao" type="text" placeholder="Sobrenome">
-                <input class="input-padrao" type="number" min="0" max="11" placeholder="CPF">
-                <input class="input-padrao" type="date">
-                <input class="input-padrao" type="tel" placeholder="Telefone">
-                <input class="input-padrao" type="text" placeholder="Cargo / Função">
-                <input class="input-padrao" type="number" placeholder="Salário">
-                <input class="input-padrao" type="email" placeholder="Email">
-                <input class="input-padrao" type="password" placeholder="Senha">
+            <form class="card-padrao-2" action="../processamento/processamentoFuncionario.php" method="POST">
+                <input class="input-padrao" type="text" placeholder="Nome" name="nome">
+                <input class="input-padrao" type="text" placeholder="Sobrenome" name="sobrenome">
+                <input class="input-padrao" type="text" maxlength="14" placeholder="CPF" name="cpf">
+                <input class="input-padrao" type="date" name="dataAdmissao" placeholder="Data de Admissão">
+                <input class="input-padrao" type="tel" placeholder="Telefone" name="telefone">
+                <input class="input-padrao" type="text" placeholder="Cargo / Função" name="cargo">
+                <input class="input-padrao" type="number" placeholder="Salário" name="salario">
+                <input class="input-padrao" type="email" placeholder="Email" name="email">
+                <input class="input-padrao" type="password" placeholder="Senha" name="senha">
                 <p class="selecionar-foto">Selecionar foto de perfil:</p>
                 <label class="enviar-arquivo"> Escolher arquivo
                     <input type="file">

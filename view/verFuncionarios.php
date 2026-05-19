@@ -1,3 +1,11 @@
+<?php
+require_once "../model/BancoDeDados.php";
+require_once "../controller/Controlador.php";
+
+$controlador = new Controlador();
+$funcionarios = $controlador->listarFuncionarios();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -33,161 +41,22 @@
 
     <main>
         <section class="grade-produtos-visualizar">
-
-            <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
+    <?php while($funcionario = mysqli_fetch_assoc($funcionarios)) { ?>
+        <a href="#" class="link-produto">
+            <section class="card-visualizar">
+                <img src="../img/funcionario.png" alt="Funcionário">
+                <section class="corpo-card-visualizar">
+                    <p class="fabricante"><strong>Nome: </strong><?php echo $funcionario["nome"]; ?></p>
+                    <p class="fabricante"><strong>Sobrenome: </strong><?php echo $funcionario["sobrenome"]; ?></p>
+                    <p class="fabricante"><strong>CPF: </strong><?php echo $funcionario["cpf"]; ?></p>
+                    <p class="fabricante"><strong>Data de Admissão: </strong><?php echo $funcionario["dataAdmissao"]; ?></p>
+                    <p class="fabricante"><strong>Telefone: </strong><?php echo $funcionario["telefone"]; ?></p>
+                    <p class="fabricante"><strong>Email: </strong><?php echo $funcionario["email"]; ?></p>
                 </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-               <a href="#" class="link-produto">
-                <section class="card-visualizar">
-                    <img src="../img/funcionario.png" alt="Camiseta">
-                    <section class="corpo-card-visualizar">
-                        <p class="fabricante"><strong>Nome: </strong>Lucca Neves</p>
-                        <p class="fabricante"><strong>CPF: </strong>123.456.789-00</p>
-                        <p class="fabricante"><strong>Data de Admissão: </strong>31/03/2026</p>
-                        <p class="fabricante"><strong>Email: </strong>lucca.neves@example.com</p>
-                        <p class="fabricante"><strong>Telefone: </strong>(11) 99999-9999</p>
-                        <p class="fabricante"><strong>Cargo: </strong>Gerente</p>
-                        <p class="fabricante"><strong>Salário: </strong>R$ 5.000,00</p>
-                    </section>
-                </section>
-            </a>
-
-           
-
-                  
-        </section>
+            </section>
+        </a>
+    <?php } ?>
+</section>
     </main>
 
     <footer class="rodape-principal">

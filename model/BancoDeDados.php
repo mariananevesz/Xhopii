@@ -62,6 +62,29 @@ class BancoDeDados {
         $resultado = mysqli_query($conexao, $sql);
         return $resultado;
     }
+
+    public function inserirFuncionario($funcionario){
+        $conexao = $this->conectarBD();
+        $nome = $funcionario->getNome();
+        $sobrenome = $funcionario->getSobrenome();
+        $cpf = $funcionario->getCpf();
+        $dataAdmissao = $funcionario->getDataAdmissao();
+        $telefone = $funcionario->getTelefone();
+        $cargo = $funcionario->getCargo();
+        $salario = $funcionario->getSalario();
+        $email = $funcionario->getEmail();
+        $senha = $funcionario->getSenha();
+        $sql = "INSERT INTO funcionario (nome, sobrenome, cpf, dataAdmissao, telefone, cargo, salario, email, senha)
+                VALUES ('$nome', '$sobrenome', '$cpf', '$dataAdmissao', '$telefone', '$cargo', '$salario', '$email', '$senha')";
+        mysqli_query($conexao, $sql);
+    }
+
+    public function retornarFuncionarios() {
+        $conexao = $this->conectarBD();
+        $sql = "SELECT * FROM funcionario";
+        $resultado = mysqli_query($conexao, $sql);
+        return $resultado;
+    }
 }
 
 ?>
