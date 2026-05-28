@@ -30,12 +30,17 @@
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
             <h1 class="main-cadastro">Cadastrar Cupom</h1>
-            <form class="card-padrao-2" action="../processamento/processamentoCupom.php" method="POST">
+            <form class="card-padrao-2" action="../processamento/processamentoCupom.php" method="POST" enctype="multipart/form-data">
                 <input class="input-padrao" type="text" placeholder="Código do cupom" name="codigo">
                 <input class="input-padrao" type="text" placeholder="Tipo de desconto" name="tipoDesconto">
                 <input class="input-padrao" type="text" placeholder="Valor do desconto" name="valorDesconto">
                 <input class="input-padrao" type="text" placeholder="Data de validade" name="dataValidade">
                 <input class="input-padrao" type="number" placeholder="Quantidade máxima de usos" name="quantidadeUsos">
+                <p class="selecionar-foto">Selecionar foto do cupom:</p>
+                <label class="enviar-arquivo"> Escolher arquivo
+                    <input type="file" name="foto">
+                </label>
+                <p class="nome-arquivo">Nenhum arquivo escolhido</p>
                 <button type="submit" class="botao-padrao">CADASTRAR</button>
                 </section>
                 

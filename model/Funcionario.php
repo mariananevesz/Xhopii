@@ -9,8 +9,9 @@ class Funcionario{
     protected $salario;
     protected $email;
     protected $senha;
+    protected $foto;
 
-    public function __construct($nome, $sobrenome, $cpf, $dataAdmissao, $telefone, $cargo, $salario, $email, $senha) {
+    public function __construct($nome, $sobrenome, $cpf, $dataAdmissao, $telefone, $cargo, $salario, $email, $senha, $foto) {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
         $this->cpf = $cpf;
@@ -20,6 +21,7 @@ class Funcionario{
         $this->salario = $salario;
         $this->email = $email;
         $this->senha = $senha;
+        $this->foto = $foto;
     }
 
     public function getNome() {
@@ -56,6 +58,10 @@ class Funcionario{
 
     public function getSenha() {
         return $this->senha;
+    }
+
+    public function getFoto() {
+        return $this->foto;
     }
 }
 

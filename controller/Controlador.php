@@ -45,5 +45,9 @@ class Controlador {
     public function listarCupons() {
         return $this->bancoDeDados->retornarCupons();
     }
+
+    public function validarLogin($email, $senha) {
+        return $this->bancoDeDados->buscarCliente($email, $senha);
+    }
 }
 ?>

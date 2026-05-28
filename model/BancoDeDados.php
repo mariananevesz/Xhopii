@@ -30,8 +30,9 @@ class BancoDeDados {
         $descricao = $produto->getDescricao();
         $valor = $produto->getValor();
         $quantidade = $produto->getQuantidade();
-        $sql = "INSERT INTO produto (nome, fabricante, descricao, valor, quantidade)
-                VALUES ('$nome', '$fabricante', '$descricao', '$valor', '$quantidade')";
+        $foto = $produto->getFoto();
+        $sql = "INSERT INTO produto (nome, fabricante, descricao, valor, quantidade, foto)
+                VALUES ('$nome', '$fabricante', '$descricao', '$valor', '$quantidade', '$foto')";
         mysqli_query($conexao, $sql);
     }
 
@@ -51,8 +52,9 @@ class BancoDeDados {
         $telefone = $cliente->getTelefone();
         $email = $cliente->getEmail();
         $senha = $cliente->getSenha();
-        $sql = "INSERT INTO cliente (nome, sobrenome, cpf, dataNascimento, telefone, email, senha)
-                VALUES ('$nome', '$sobrenome', '$cpf', '$dataNascimento', '$telefone', '$email', '$senha')";
+        $foto = $cliente->getFoto();
+        $sql = "INSERT INTO cliente (nome, sobrenome, cpf, dataNascimento, telefone, email, senha, foto)
+                VALUES ('$nome', '$sobrenome', '$cpf', '$dataNascimento', '$telefone', '$email', '$senha', '$foto')";
         mysqli_query($conexao, $sql);
     }
 
@@ -74,8 +76,9 @@ class BancoDeDados {
         $salario = $funcionario->getSalario();
         $email = $funcionario->getEmail();
         $senha = $funcionario->getSenha();
-        $sql = "INSERT INTO funcionario (nome, sobrenome, cpf, dataAdmissao, telefone, cargo, salario, email, senha)
-                VALUES ('$nome', '$sobrenome', '$cpf', '$dataAdmissao', '$telefone', '$cargo', '$salario', '$email', '$senha')";
+        $foto = $funcionario->getFoto();
+        $sql = "INSERT INTO funcionario (nome, sobrenome, cpf, dataAdmissao, telefone, cargo, salario, email, senha, foto)
+                VALUES ('$nome', '$sobrenome', '$cpf', '$dataAdmissao', '$telefone', '$cargo', '$salario', '$email', '$senha', '$foto')";
         mysqli_query($conexao, $sql);
     }
 
@@ -112,8 +115,9 @@ class BancoDeDados {
         $valorDesconto = $cupom->getValorDesconto();
         $dataValidade = $cupom->getDataValidade();
         $quantidadeUsos = $cupom->getQuantidadeUsos();
-        $sql = "INSERT INTO cupom (codigo, tipoDesconto, valorDesconto, dataValidade, quantidadeUsos)
-                VALUES ('$codigo', '$tipoDesconto', '$valorDesconto', '$dataValidade', '$quantidadeUsos')";
+        $foto = $cupom->getFoto();
+        $sql = "INSERT INTO cupom (codigo, tipoDesconto, valorDesconto, dataValidade, quantidadeUsos, foto)
+                VALUES ('$codigo', '$tipoDesconto', '$valorDesconto', '$dataValidade', '$quantidadeUsos', '$foto')";
         mysqli_query($conexao, $sql);
     }
 
@@ -122,6 +126,17 @@ class BancoDeDados {
         $sql = "SELECT * FROM cupom";
         $resultado = mysqli_query($conexao, $sql);
         return $resultado;
+    }
+
+    public function buscarCliente($email, $senha) {
+        $conexao = $this->conectarBD();
+        $sql = "SELECT * FROM cliente WHERE email = '$email' AND senha = '$senha'";
+        $resultado = mysqli_query($conexao, $sql);
+        $cliente = mysqli_fetch_assoc($resultado);
+        if ($cliente) {
+            return $cliente;
+        }
+        return false;
     }
 }
 

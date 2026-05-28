@@ -20,10 +20,15 @@
     <main class="main-login">
         <section class="main-login-section">
             <h1 class="main-login-h1">Login</h1>
-            <form class="card-padrao">
-                <input class="input-padrao" type="email" placeholder="Email">
-                <input class="input-padrao" type="password" placeholder="Senha">
-                <a href="../view/home.php" class="botao-padrao">ENTRE</a>
+            <form class="card-padrao" method="POST" action="../processamento/processamentoLogin.php">
+                <?php
+                if (isset($_GET["erro"])) {
+                    echo "<p>Login incorreto.</p>";
+                }
+                ?>
+                <input class="input-padrao" type="email" name="email" placeholder="Email">
+                <input class="input-padrao" type="password" name="senha" placeholder="Senha">
+                <button type="submit" class="botao-padrao">ENTRE</button>
                 <nav class="main-login-links">
                     <a href="../view/redefinirSenha.php">Esqueci minha senha</a>
                     <a href="#">Fazer login com SMS</a>

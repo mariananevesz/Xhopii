@@ -7,8 +7,9 @@ class Cliente {
     protected $telefone;
     protected $email;
     protected $senha;
+    protected $foto;
 
-    public function __construct($nome, $sobrenome, $cpf, $dataNascimento, $telefone, $email, $senha) {
+    public function __construct($nome, $sobrenome, $cpf, $dataNascimento, $telefone, $email, $senha, $foto) {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
         $this->cpf = $cpf;
@@ -16,6 +17,7 @@ class Cliente {
         $this->telefone = $telefone;
         $this->email = $email;
         $this->senha = $senha;
+        $this->foto = $foto;
     }
 
     public function getNome() {
@@ -44,6 +46,10 @@ class Cliente {
 
     public function getSenha() {
         return $this->senha;
+    }
+
+    public function getFoto() {
+        return $this->foto;
     }
 }
 

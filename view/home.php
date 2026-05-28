@@ -1,3 +1,16 @@
+<?php
+session_start();
+if (!isset($_SESSION["cliente_id"])) {
+    header("Location: ../view/login.php");
+    exit;
+}
+
+require_once "../model/BancoDeDados.php";
+require_once "../controller/Controlador.php";
+
+$controlador = new Controlador();
+$produtos = $controlador->listarProdutos();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,7 +26,7 @@
             <h1 class="xhopii-branca">Xhopii</h1>
         </section>
         <nav class="sair">
-            <a href="../view/login.php">Sair</a> 
+            <a href="../processamento/logout.php">Sair</a> 
         </nav>
     </header>
 
@@ -49,116 +62,28 @@
 
     <main>
         <section class="grade-produtos">
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
-
-            <a href="../view/produtos.php" class="link-produto">
-                <section class="card-padrao-produto">
-                    <img src="../img/produto1.png" alt="Camiseta">
-                    <p class="nome-p">Camisa Desenvolvedor Front-End CSS</p>
-                    <section class="preco-estoque-container">
-                        <span class="preco-mini">R$59,90</span>
-                        <span class="estoque-cinza">171 disponíveis</span>
-                    </section>
-                </section>
-            </a>
+            <?php if ($produtos && mysqli_num_rows($produtos) > 0) { ?>
+                <?php while($produto = mysqli_fetch_assoc($produtos)) { ?>
+                    <?php
+                    $nome = $produto["nome"] ?? "";
+                    $valor = $produto["valor"] ?? 0;
+                    $quantidade = $produto["quantidade"] ?? 0;
+                    $foto = empty($produto["foto"]) ? "../img/produto1.png" : "../" . $produto["foto"];
+                    ?>
+                    <a href="../view/produtos.php" class="link-produto">
+                        <section class="card-padrao-produto">
+                            <img src="<?php echo htmlspecialchars($foto); ?>" alt="Produto">
+                            <p class="nome-p"><?php echo htmlspecialchars($nome); ?></p>
+                            <section class="preco-estoque-container">
+                                <span class="preco-mini">R$<?php echo number_format((float)$valor, 2, ",", "."); ?></span>
+                                <span class="estoque-cinza"><?php echo htmlspecialchars($quantidade); ?> disponíveis</span>
+                            </section>
+                        </section>
+                    </a>
+                <?php } ?>
+            <?php } else { ?>
+                <p>Nenhum produto cadastrado.</p>
+            <?php } ?>
 
         </section>
     </main>

@@ -42,9 +42,10 @@ $cupons = $controlador->listarCupons();
     <main>
             <section class="grade-produtos-visualizar">
     <?php while($cupom = mysqli_fetch_assoc($cupons)) { ?>
+        <?php $foto = empty($cupom["foto"]) ? "../img/cupom.png" : "../" . $cupom["foto"]; ?>
         <a href="#" class="link-produto">
             <section class="card-visualizar">
-                <img src="../img/cupom.png" alt="Cupom">
+                <img src="<?php echo htmlspecialchars($foto); ?>" alt="Cupom">
                 <section class="corpo-card-visualizar">
                     <p class="fabricante"><strong>Código: </strong><?php echo $cupom["codigo"]; ?></p>
                     <p class="fabricante"><strong>Tipo de Desconto: </strong><?php echo $cupom["tipoDesconto"]; ?></p>

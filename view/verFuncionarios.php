@@ -42,9 +42,10 @@ $funcionarios = $controlador->listarFuncionarios();
     <main>
         <section class="grade-produtos-visualizar">
     <?php while($funcionario = mysqli_fetch_assoc($funcionarios)) { ?>
+        <?php $foto = empty($funcionario["foto"]) ? "../img/funcionario.png" : "../" . $funcionario["foto"]; ?>
         <a href="#" class="link-produto">
             <section class="card-visualizar">
-                <img src="../img/funcionario.png" alt="Funcionário">
+                <img src="<?php echo htmlspecialchars($foto); ?>" alt="Funcionário">
                 <section class="corpo-card-visualizar">
                     <p class="fabricante"><strong>Nome: </strong><?php echo $funcionario["nome"]; ?></p>
                     <p class="fabricante"><strong>Sobrenome: </strong><?php echo $funcionario["sobrenome"]; ?></p>

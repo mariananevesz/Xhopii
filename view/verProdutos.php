@@ -42,9 +42,10 @@ $produtos = $controlador->listarProdutos();
     <main>
         <section class="grade-produtos-visualizar">
             <?php while($produto = mysqli_fetch_assoc($produtos)) { ?>
+            <?php $foto = empty($produto["foto"]) ? "../img/produto1.png" : "../" . $produto["foto"]; ?>
             <a href="#" class="link-produto">
             <section class="card-visualizar">
-            <img src="../img/produto1.png" alt="Produto">
+            <img src="<?php echo htmlspecialchars($foto); ?>" alt="Produto">
             <section class="corpo-card-visualizar">
                 <p class="nome-p"><?php echo $produto["nome"]; ?></p>
                 <p class="fabricante"><strong>Fabricante: </strong><?php echo $produto["fabricante"]; ?></p>

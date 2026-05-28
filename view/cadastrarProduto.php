@@ -30,7 +30,7 @@
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
             <h1 class="main-cadastro">Cadastrar Produto</h1>
-            <form class="card-padrao-2" action="../processamento/processamentoProduto.php" method="POST">
+            <form class="card-padrao-2" action="../processamento/processamentoProduto.php" method="POST" enctype="multipart/form-data">
                 <input class="input-padrao" type="text" name="nome" placeholder="Nome">
                 <input class="input-padrao" type="text" name="fabricante" placeholder="Fabricante">
                 <input class="input-padrao" type="text" name="descricao" placeholder="Descrição">
@@ -38,7 +38,7 @@
                 <input class="input-padrao" type="number" name="quantidade" placeholder="Quantidade">
                 <p class="selecionar-foto">Selecionar foto do produto:</p>
                 <label class="enviar-arquivo"> Escolher arquivo
-                    <input type="file">
+                    <input type="file" name="foto">
                 </label>
                 <p class="nome-arquivo">Nenhum arquivo escolhido</p>
                 <button type="submit" class="botao-padrao">CADASTRAR</button>

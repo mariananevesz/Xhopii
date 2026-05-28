@@ -30,7 +30,7 @@
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
             <h1 class="main-cadastro">Cadastrar Cliente</h1>
-            <form class="card-padrao-2" action="../processamento/processamentoCliente.php" method="POST">
+            <form class="card-padrao-2" action="../processamento/processamentoCliente.php" method="POST" enctype="multipart/form-data">
                 <input class="input-padrao" type="text" placeholder="Nome" name="nome">
                 <input class="input-padrao" type="text" placeholder="Sobrenome" name="sobrenome">
                 <input class="input-padrao" type="text" maxlength="14" placeholder="CPF" name="cpf">
@@ -40,7 +40,7 @@
                 <input class="input-padrao" type="password" placeholder="Senha" name="senha">
                 <p class="selecionar-foto">Selecionar foto de perfil:</p>
                 <label class="enviar-arquivo"> Escolher arquivo
-                    <input type="file">
+                    <input type="file" name="foto">
                 </label>
                 <p class="nome-arquivo">Nenhum arquivo escolhido</p>
                 <button type="submit" class="botao-padrao">CADASTRAR</button>               

@@ -42,9 +42,10 @@ $clientes = $controlador->listarClientes();
     <main>
        <section class="grade-produtos-visualizar">
     <?php while($cliente = mysqli_fetch_assoc($clientes)) { ?>
+        <?php $foto = empty($cliente["foto"]) ? "../img/cliente.png" : "../" . $cliente["foto"]; ?>
         <a href="#" class="link-produto">
             <section class="card-visualizar">
-                <img src="../img/cliente.png" alt="Cliente">
+                <img src="<?php echo htmlspecialchars($foto); ?>" alt="Cliente">
                 <section class="corpo-card-visualizar">
                     <p class="fabricante"><strong>Nome: </strong><?php echo $cliente["nome"]; ?></p>
                     <p class="fabricante"><strong>Sobrenome: </strong><?php echo $cliente["sobrenome"]; ?></p>
