@@ -14,6 +14,10 @@ class Controlador {
       return $this->bancoDeDados->retornarProdutos();
     }
 
+    public function buscarProdutoPorId($id) {
+        return $this->bancoDeDados->retornarProdutoPorId($id);
+    }
+
     public function cadastrarCliente($cliente){
         $this->bancoDeDados->inserirCliente($cliente);
     }

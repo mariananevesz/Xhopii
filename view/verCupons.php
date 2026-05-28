@@ -111,7 +111,7 @@ $cupons = $controlador->listarCupons();
         </section>
 
         <hr>
-        <p class="rodape-copy">© 2023 Xhopii. Todos os direitos acadêmicos reservados</p>
+        <p class="rodape-copy">© 2026 Xhopii. Todos os direitos acadêmicos reservados</p>
     </footer>
 
 </body>

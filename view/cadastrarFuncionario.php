@@ -103,10 +103,11 @@
     <hr>
     <p class="rodape-copy">
         
-        © 2023 Xhopii. Todos os direitos acadêmicos reservados
+        © 2026 Xhopii. Todos os direitos acadêmicos reservados
     </p>
     </footer>
 
+    <script src="../js/nomeArquivo.js"></script>
 </body>
 </html>
 </body>

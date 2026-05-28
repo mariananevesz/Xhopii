@@ -1,3 +1,29 @@
+<?php
+require_once "../model/BancoDeDados.php";
+require_once "../controller/Controlador.php";
+
+$idProduto = isset($_GET["id"]) ? (int) $_GET["id"] : 0;
+
+if ($idProduto <= 0) {
+    header("Location: ../view/home.php");
+    exit;
+}
+
+$controlador = new Controlador();
+$produto = $controlador->buscarProdutoPorId($idProduto);
+
+if (!$produto) {
+    header("Location: ../view/home.php");
+    exit;
+}
+
+$nome = $produto["nome"] ?? "";
+$fabricante = $produto["fabricante"] ?? "";
+$descricao = $produto["descricao"] ?? "";
+$valor = $produto["valor"] ?? 0;
+$quantidade = $produto["quantidade"] ?? 0;
+$foto = empty($produto["foto"]) || !file_exists(__DIR__ . "/../" . $produto["foto"]) ? "../img/produto1.png" : "../" . $produto["foto"];
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -31,23 +57,25 @@
     
     <main class="main-fundo-branco">
     <section class="fotos-laterais">
-        <img src="../img/produto1.png" alt="mini camiseta preta" class="foto-lateral-destacada">
-        <img src="../img/produto2.png" alt="mini camiseta azul" class="foto-lateral">
-        <img src="../img/produto3.png" alt="mini camiseta verde" class="foto-lateral">
-        <img src="../img/produto4.png" alt="mini camiseta cinza" class="foto-lateral">
-        <img src="../img/produto5.png" alt="mini camiseta rosa" class="foto-lateral">
+        <img src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($nome); ?>" class="foto-lateral-destacada">
+        <img src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($nome); ?>" class="foto-lateral">
+        <img src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($nome); ?>" class="foto-lateral">
+        <img src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($nome); ?>" class="foto-lateral">
+        <img src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($nome); ?>" class="foto-lateral">
     </section>
 
     <section class="foto-destacada">
-        <img src="../img/produto1.png" alt="Camisa Preta">
+        <img src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($nome); ?>">
     </section>
 
     <section class="informacoes-compra">
-        <h1 class="nome-produto">Camisa Desenvolvedor Front-End CSS</h1>
-        <p class="preco">R$56,90</p>
-        <p>171 peças disponíveis</p>
+        <h1 class="nome-produto"><?php echo htmlspecialchars($nome); ?></h1>
+        <p><strong>Fabricante: </strong><?php echo htmlspecialchars($fabricante); ?></p>
+        <p><?php echo htmlspecialchars($descricao); ?></p>
+        <p class="preco">R$<?php echo number_format((float)$valor, 2, ",", "."); ?></p>
+        <p><?php echo htmlspecialchars($quantidade); ?> peças disponíveis</p>
 
-        <div class="opcoes-selecao">
+        <!--<div class="opcoes-selecao">
             <p class="modelos">Modelos:</p>
             <div class="lista-botoes">
                 <button type="button" class="botoes-padroes">Preto</button>
@@ -68,7 +96,7 @@
             </div>
         </div>
 
-        <p class="tamanho-escolhido">Tamanho Selecionado: P</p>
+        <p class="tamanho-escolhido">Tamanho Selecionado: P</p>-->
 
         <button class="botao-comprar">Comprar Agora</button>
     </section>
@@ -120,7 +148,7 @@
     <hr>
     <p class="rodape-copy">
         
-        © 2023 Xhopii. Todos os direitos acadêmicos reservados
+        © 2026 Xhopii. Todos os direitos acadêmicos reservados
     </p>
     </footer>
 

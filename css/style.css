@@ -440,13 +440,14 @@ footer hr {
 }
 
 .botao-comprar{
-    width: 120px;
+    width: 130px;
     height: 50px;
     color:#ffffff;
     background-color:#FB5630;
     border: none;
     cursor: pointer;
     margin-top: 20px;
+    font-size: 15px;
 }
 
 .modelos{

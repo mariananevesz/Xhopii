@@ -74,7 +74,7 @@ $produtos = $controlador->listarProdutos();
                     $quantidade = $produto["quantidade"] ?? 0;
                     $foto = empty($produto["foto"]) || !file_exists(__DIR__ . "/../" . $produto["foto"]) ? "../img/produto1.png" : "../" . $produto["foto"];
                     ?>
-                    <a href="../view/produtos.php" class="link-produto">
+                    <a href="../view/produtos.php?id=<?php echo (int)$produto["id"]; ?>" class="link-produto">
                         <section class="card-padrao-produto">
                             <img src="<?php echo htmlspecialchars($foto); ?>" alt="Produto">
                             <p class="nome-p"><?php echo htmlspecialchars($nome); ?></p>
@@ -140,7 +140,7 @@ $produtos = $controlador->listarProdutos();
         </section>
 
         <hr>
-        <p class="rodape-copy">© 2023 Xhopii. Todos os direitos acadêmicos reservados</p>
+        <p class="rodape-copy">© 2026 Xhopii. Todos os direitos acadêmicos reservados</p>
     </footer>
 
     <script src="../js/carrossel.js"></script>

@@ -138,6 +138,16 @@ class BancoDeDados {
         }
         return false;
     }
+    
+    public function retornarProdutoPorId($id) {
+        $conexao = $this->conectarBD();
+        $sql = "SELECT * FROM produto WHERE id = ? LIMIT 1";
+        $comando = mysqli_prepare($conexao, $sql);
+        mysqli_stmt_bind_param($comando, "i", $id);
+        mysqli_stmt_execute($comando);
+        $resultado = mysqli_stmt_get_result($comando);
+        return mysqli_fetch_assoc($resultado);
+    }
 }
 
 ?>
