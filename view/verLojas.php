@@ -21,19 +21,23 @@ $lojas = $controlador->listarLojas();
             <h1 class="xhopii-branca">Xhopii</h1>
         </section>
         <nav class="sair">
-            <a href="../view/login.php">Sair</a>
+            <a href="../processamento/logout.php">Sair</a>
         </nav>
     </header>
 
     <header class="cabecalho-secundario-2">
         <section class="cabecalho-secundario-laranja">
-            <p>Home</p>
-            <p>Cadastro Cliente</p>
-            <p>Cadastro Funcionário</p>
-            <p>Cadastro Produto</p>
-            <p>Ver Clientes</p>
-            <p>Ver Funcionários</p>
-            <p>Ver Produtos</p>
+            <a href="../view/home.php">Home</a>
+            <a href="../view/cadastrarCliente.php">Cadastro Cliente</a>
+            <a href="../view/cadastrarFuncionario.php">Cadastro Funcion&aacute;rio</a>
+            <a href="../view/cadastrarProduto.php">Cadastro Produto</a>
+            <a href="../view/cadastrarCupons.php">Cadastro Cupom</a>
+            <a href="../view/cadastrarLoja.php">Cadastro Loja</a>
+            <a href="../view/verClientes.php">Ver Clientes</a>
+            <a href="../view/verFuncionarios.php">Ver Funcion&aacute;rios</a>
+            <a href="../view/verProdutos.php">Ver Produtos</a>
+            <a href="../view/verCupons.php">Ver Cupons</a>
+            <a href="../view/verLojas.php">Ver Lojas</a>
         </section>
     </header>
 

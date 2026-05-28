@@ -32,13 +32,17 @@ $produtos = $controlador->listarProdutos();
 
     <header class="cabecalho-secundario-2">
         <section class="cabecalho-secundario-laranja">
-            <p>Home</p>
-            <p>Cadastro Cliente</p>
-            <p>Cadastro Funcionário</p>
-            <p>Cadastro Produto</p>
-            <p>Ver Clientes</p>
-            <p>Ver Funcionários</p>
-            <p>Ver Produtos</p>
+            <a href="../view/home.php">Home</a>
+            <a href="../view/cadastrarCliente.php">Cadastro Cliente</a>
+            <a href="../view/cadastrarFuncionario.php">Cadastro Funcion&aacute;rio</a>
+            <a href="../view/cadastrarProduto.php">Cadastro Produto</a>
+            <a href="../view/cadastrarCupons.php">Cadastro Cupom</a>
+            <a href="../view/cadastrarLoja.php">Cadastro Loja</a>
+            <a href="../view/verClientes.php">Ver Clientes</a>
+            <a href="../view/verFuncionarios.php">Ver Funcion&aacute;rios</a>
+            <a href="../view/verProdutos.php">Ver Produtos</a>
+            <a href="../view/verCupons.php">Ver Cupons</a>
+            <a href="../view/verLojas.php">Ver Lojas</a>
         </section>
     </header>
 
@@ -46,15 +50,15 @@ $produtos = $controlador->listarProdutos();
     <section class="carrossel">
         <button id="prev">❮</button>
         <section class="slides">
-            <img src="img/banner1.png" class="slide active" alt="Banner 1">
-            <img src="img/pagamentos.png" class="slide" alt="Banner 2">
-            <img src="img/banner1.png" class="slide" alt="Banner 3">
+            <img src="../img/banner1.png" class="slide active" alt="Banner 1">
+            <img src="../img/pagamentos.png" class="slide" alt="Banner 2">
+            <img src="../img/banner1.png" class="slide" alt="Banner 3">
         </section>
         <button id="next">❯</button>
     </section>
 
     <section class="banner-promocional">
-        <img src="img/banner-promocional.png" alt="Banner Promocional">
+        <img src="../img/banner-promocional.png" alt="Banner Promocional">
     </section>
 
     <p class="titulo-descobertas">DESCOBERTAS DO DIA</p>
@@ -68,7 +72,7 @@ $produtos = $controlador->listarProdutos();
                     $nome = $produto["nome"] ?? "";
                     $valor = $produto["valor"] ?? 0;
                     $quantidade = $produto["quantidade"] ?? 0;
-                    $foto = empty($produto["foto"]) ? "../img/produto1.png" : "../" . $produto["foto"];
+                    $foto = empty($produto["foto"]) || !file_exists(__DIR__ . "/../" . $produto["foto"]) ? "../img/produto1.png" : "../" . $produto["foto"];
                     ?>
                     <a href="../view/produtos.php" class="link-produto">
                         <section class="card-padrao-produto">

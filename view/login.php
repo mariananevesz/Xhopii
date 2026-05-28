@@ -80,21 +80,21 @@
 
         <section>
             <h3>PAGAMENTO</h3>
-            <img src="img/pagamentos.png" alt="Pix">
+            <img src="../img/pagamentos.png" alt="Pix">
         </section>
 
         <section>
             <h3>SIGA-NOS</h3>
-                <p><img src="img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
-                <p><img src="img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
-                <p><img src="img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
-                <p><img src="img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
-                <p><img src="img/linkedIn-preto.png" alt="LinkedIn" class="social-icone"> LinkedIn</p>
+                <p><img src="../img/insta-preto.png" alt="Instagram" class="social-icone"> Instagram</p>
+                <p><img src="../img/twitter-preto.png" alt="Twitter" class="social-icone"> Twitter</p>
+                <p><img src="../img/facebook-preto.png" alt="Facebook" class="social-icone"> Facebook</p>
+                <p><img src="../img/youtube-preto.jpg" alt="Youtube" class="social-icone"> YouTube</p>
+                <p><img src="../img/linkedIn-preto.png" alt="LinkedIn" class="social-icone"> LinkedIn</p>
         </section>
 
         <section>
             <h3>ATENDIMENTO AO CLIENTE</h3>
-            <img src="img/qrcode.png" alt="QR Code" class="qrcode">    
+            <img src="../img/qrcode.png" alt="QR Code" class="qrcode">    
         </section>
 
     </section>

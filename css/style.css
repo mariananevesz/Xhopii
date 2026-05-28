@@ -51,22 +51,54 @@ body {
     display: flex;
     justify-content: center;   
     align-items: center;      
-    gap: 30px;                
+    gap: 15px;                
     height: 50px;             
     width: 100%;              
     color:#FB5630;
     cursor: pointer;
+    flex-wrap: nowrap;
 }
 
 .cabecalho-secundario-laranja{
     display: flex;
     justify-content: center;   
     align-items: center;      
-    gap: 30px;                
+    gap: 15px;                
     height: 50px;             
     width: 100%;              
     color: #ffffff;
     cursor: pointer;
+    flex-wrap: nowrap;
+}
+
+.cabecalho-secundario-laranja a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.cabecalho-secundario-laranja a:visited,
+.cabecalho-secundario-laranja a:hover,
+.cabecalho-secundario-laranja a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.cabecalho-secundario-cinza a {
+    color: #FB5630;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.cabecalho-secundario-cinza a:visited,
+.cabecalho-secundario-cinza a:hover,
+.cabecalho-secundario-cinza a:active {
+    color: #FB5630;
+    text-decoration: none;
 }
 
 .logo-xhopii {
