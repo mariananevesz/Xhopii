@@ -148,6 +148,30 @@ class BancoDeDados {
         $resultado = mysqli_stmt_get_result($comando);
         return mysqli_fetch_assoc($resultado);
     }
+
+    public function atualizarProduto($id, $produto) {
+        $conexao = $this->conectarBD();
+        $nome = $produto->getNome();
+        $fabricante = $produto->getFabricante();
+        $descricao = $produto->getDescricao();
+        $valor = $produto->getValor();
+        $quantidade = $produto->getQuantidade();
+        $foto = $produto->getFoto();
+        $sql = "UPDATE produto
+                SET nome = ?, fabricante = ?, descricao = ?, valor = ?, quantidade = ?, foto = ?
+                WHERE id = ?";
+        $comando = mysqli_prepare($conexao, $sql);
+        mysqli_stmt_bind_param($comando, "sssdisi", $nome, $fabricante, $descricao, $valor, $quantidade, $foto, $id);
+        mysqli_stmt_execute($comando);
+    }
+
+    public function excluirProduto($id) {
+        $conexao = $this->conectarBD();
+        $sql = "DELETE FROM produto WHERE id = ?";
+        $comando = mysqli_prepare($conexao, $sql);
+        mysqli_stmt_bind_param($comando, "i", $id);
+        mysqli_stmt_execute($comando);
+    }
 }
 
 ?>
