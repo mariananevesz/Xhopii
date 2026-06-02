@@ -138,6 +138,32 @@ class BancoDeDados {
         }
         return false;
     }
+
+    public function buscarFuncionario($email, $senha) {
+        $conexao = $this->conectarBD();
+
+        $email = trim($email);
+        $senha = trim($senha);
+
+        $sql = "SELECT * FROM funcionario WHERE email = ? AND senha = ? LIMIT 1";
+        $comando = mysqli_prepare($conexao, $sql);
+
+        if (!$comando) {
+            return false;
+        }
+
+        mysqli_stmt_bind_param($comando, "ss", $email, $senha);
+        mysqli_stmt_execute($comando);
+
+        $resultado = mysqli_stmt_get_result($comando);
+        $funcionario = mysqli_fetch_assoc($resultado);
+
+        if ($funcionario) {
+            return $funcionario;
+        }
+
+        return false;
+    }
     
     public function retornarProdutoPorId($id) {
         $conexao = $this->conectarBD();

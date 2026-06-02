@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["cliente_id"])) {
+if (!isset($_SESSION["funcionario_id"])) {
     header("Location: ../view/login.php");
     exit;
 }

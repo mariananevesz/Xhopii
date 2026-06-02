@@ -59,7 +59,7 @@ class Controlador {
     }
 
     public function validarLogin($email, $senha) {
-        return $this->bancoDeDados->buscarCliente($email, $senha);
+        return $this->bancoDeDados->buscarFuncionario($email, $senha);
     }
 }
 ?>

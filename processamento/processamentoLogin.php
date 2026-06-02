@@ -14,11 +14,12 @@ if (empty($email) || empty($senha)) {
 }
 
 $controlador = new Controlador();
-$cliente = $controlador->validarLogin($email, $senha);
+$funcionario = $controlador->validarLogin($email, $senha);
 
-if ($cliente) {
-    $_SESSION["cliente_id"] = $cliente["id"];
-    $_SESSION["cliente_nome"] = $cliente["nome"];
+if ($funcionario) {
+    $_SESSION["funcionario_id"] = $funcionario["id"];
+    $_SESSION["funcionario_nome"] = $funcionario["nome"];
+    $_SESSION["funcionario_email"] = $funcionario["email"];
     header("Location: ../view/home.php");
     exit;
 }
