@@ -18,6 +18,14 @@ class Controlador {
         return $this->bancoDeDados->retornarProdutoPorId($id);
     }
 
+    public function editarProduto($id, $produto) {
+        $this->bancoDeDados->atualizarProduto($id, $produto);
+    }
+
+    public function excluirProduto($id) {
+        $this->bancoDeDados->excluirProduto($id);
+    }
+
     public function cadastrarCliente($cliente){
         $this->bancoDeDados->inserirCliente($cliente);
     }

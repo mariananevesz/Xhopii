@@ -666,3 +666,31 @@ button {
     margin-top: 5px;
   
 }
+
+.acoes-card {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.botao-acao-produto {
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.botao-editar-produto {
+    background-color: #FB5630;
+    color: #ffffff;
+}
+
+.botao-excluir-produto {
+    background-color: #ffffff;
+    color: #FB5630;
+    border: 1px solid #FB5630;
+}

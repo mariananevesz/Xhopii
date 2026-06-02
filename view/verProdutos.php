@@ -2,6 +2,7 @@
 require_once "../model/Produto.php";
 require_once "../model/BancoDeDados.php";
 require_once "../controller/Controlador.php";
+
 $controlador = new Controlador();
 $produtos = $controlador->listarProdutos();
 ?>
@@ -45,23 +46,56 @@ $produtos = $controlador->listarProdutos();
 
     <main>
         <section class="grade-produtos-visualizar">
-            <?php while($produto = mysqli_fetch_assoc($produtos)) { ?>
-            <?php $foto = empty($produto["foto"]) || !file_exists(__DIR__ . "/../" . $produto["foto"]) ? "../img/produto1.png" : "../" . $produto["foto"]; ?>
-            <a href="#" class="link-produto">
-            <section class="card-visualizar">
-            <img src="<?php echo htmlspecialchars($foto); ?>" alt="Produto">
-            <section class="corpo-card-visualizar">
-                <p class="nome-p"><?php echo $produto["nome"]; ?></p>
-                <p class="fabricante"><strong>Fabricante: </strong><?php echo $produto["fabricante"]; ?></p>
-                <p class="mini-descricao"><strong>Descrição: </strong><?php echo $produto["descricao"]; ?></p>
-            </section>
-            <section class="preco-estoque-container">
-                <span class="preco-mini">R$ <?php echo $produto["valor"]; ?></span>
-                <span class="estoque-cinza"><?php echo $produto["quantidade"]; ?> disponíveis</span>
-            </section>
-            </section>
-        </a>
-<?php } ?>
+
+            <?php foreach ($produtos as $produto) { ?>
+
+                <?php
+                    $idProduto = $produto['id'] ?? $produto['idProduto'] ?? $produto['id_produto'] ?? '';
+
+                    $fotoProduto = $produto['foto'] ?? $produto['imagem'] ?? '';
+
+                    if ($fotoProduto != '') {
+                        if (strpos($fotoProduto, '../') === 0) {
+                            $caminhoFoto = $fotoProduto;
+                        } else if (strpos($fotoProduto, 'img/') === 0) {
+                            $caminhoFoto = "../" . $fotoProduto;
+                        } else {
+                            $caminhoFoto = "../img/" . $fotoProduto;
+                        }
+                    } else {
+                        $caminhoFoto = "../img/produto1.png";
+                    }
+                ?>
+
+                <section class="card-visualizar">
+                    <img src="<?= $caminhoFoto ?>" alt="Produto">
+
+                    <section class="corpo-card-visualizar">
+                        <p class="nome-p"><?= $produto['nome'] ?></p>
+                        <p class="fabricante"><strong>Fabricante: </strong><?= $produto['fabricante'] ?></p>
+                        <p class="mini-descricao"><strong>Descrição: </strong><?= $produto['descricao'] ?></p>
+                    </section>
+
+                    <section class="preco-estoque-container">
+                        <span class="preco-mini">R$ <?= $produto['valor'] ?></span>
+                        <span class="estoque-cinza"><?= $produto['quantidade'] ?> disponíveis</span>
+                    </section>
+
+                    <section class="acoes-card">
+                        <a href="editarProduto.php?idProduto=<?= $idProduto ?>" class="botao-acao-produto botao-editar-produto">
+                            Editar
+                        </a>
+
+                        <a href="../processamento/processamento.php?acao=excluirProduto&idProduto=<?= $idProduto ?>" 
+                           class="botao-acao-produto botao-excluir-produto"
+                           onclick="return confirm('Tem certeza que deseja excluir este produto?');">
+                            Excluir
+                        </a>
+                    </section>
+                </section>
+
+            <?php } ?>
+
         </section>
     </main>
 

@@ -1,9 +1,32 @@
+<?php
+require_once "../model/Produto.php";
+require_once "../model/BancoDeDados.php";
+require_once "../controller/Controlador.php";
+
+$idProduto = isset($_GET["idProduto"]) ? (int) $_GET["idProduto"] : 0;
+
+if ($idProduto <= 0) {
+    header("Location: verProdutos.php");
+    exit;
+}
+
+$controlador = new Controlador();
+$produto = $controlador->buscarProdutoPorId($idProduto);
+
+if (!$produto) {
+    header("Location: verProdutos.php");
+    exit;
+}
+
+$fotoProduto = $produto["foto"] ?? "";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Cadastrar Produto</title>
+    <title>Editar Produto</title>
 </head>
 <body>
     <header class="cabecalho-principal-laranja">
@@ -33,21 +56,22 @@
 
     <main class="main-fundo-cinza">
         <section class="main-fundo-branco-section">
-            <h1 class="main-cadastro">Cadastrar Produto</h1>
-            <form class="card-padrao-2" action="../processamento/processamentoProduto.php" method="POST" enctype="multipart/form-data">
-                <input class="input-padrao" type="text" name="nome" placeholder="Nome">
-                <input class="input-padrao" type="text" name="fabricante" placeholder="Fabricante">
-                <input class="input-padrao" type="text" name="descricao" placeholder="Descrição">
-                <input class="input-padrao" type="number" name="valor" step="0.01" min="0" placeholder="Valor">
-                <input class="input-padrao" type="number" name="quantidade" placeholder="Quantidade">
+            <h1 class="main-cadastro">Editar Produto</h1>
+            <form class="card-padrao-2" action="../processamento/processamento.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="acao" value="editarProduto">
+                <input type="hidden" name="idProduto" value="<?= htmlspecialchars($produto["id"]) ?>">
+                <input type="hidden" name="foto_atual" value="<?= htmlspecialchars($fotoProduto) ?>">
+                <input class="input-padrao" type="text" name="nome" placeholder="Nome" value="<?= htmlspecialchars($produto["nome"]) ?>">
+                <input class="input-padrao" type="text" name="fabricante" placeholder="Fabricante" value="<?= htmlspecialchars($produto["fabricante"]) ?>">
+                <input class="input-padrao" type="text" name="descricao" placeholder="Descri&ccedil;&atilde;o" value="<?= htmlspecialchars($produto["descricao"]) ?>">
+                <input class="input-padrao" type="number" name="valor" step="0.01" min="0" placeholder="Valor" value="<?= htmlspecialchars($produto["valor"]) ?>">
+                <input class="input-padrao" type="number" name="quantidade" placeholder="Quantidade" value="<?= htmlspecialchars($produto["quantidade"]) ?>">
                 <p class="selecionar-foto">Selecionar foto do produto:</p>
                 <label class="enviar-arquivo"> Escolher arquivo
                     <input type="file" name="foto">
                 </label>
                 <p class="nome-arquivo">Nenhum arquivo escolhido</p>
-                <button type="submit" class="botao-padrao">CADASTRAR</button>
-                </section>
-                
+                <button type="submit" class="botao-padrao">EDITAR</button>
             </form>
         </section>
     </main>
@@ -58,20 +82,20 @@
             <h3>ATENDIMENTO AO CLIENTE</h3>
             <p>Central de Ajuda</p>
             <p>Como Comprar</p>
-            <p>Métodos de Parametro</p>
+            <p>M&eacute;todos de Parametro</p>
             <p>Garantia Xhopii</p>
-            <p>Devolução e Reembolso</p>
+            <p>Devolu&ccedil;&atilde;o e Reembolso</p>
             <p>Fale Conosco</p>
             <p>Ouvidoria</p>
         </section>
 
         <section>
             <h3>SOBRE A XHOPII</h3>
-            <p>Sobre Nós</p>
-            <p>Políticas Xhopii</p>
+            <p>Sobre N&oacute;s</p>
+            <p>Pol&iacute;ticas Xhopii</p>
             <p>Programa de Aliados da Xhopii</p>
             <p>Seja um Entregador Xhopii</p>
-            <p>Ofertas Relâmpago</p>
+            <p>Ofertas Rel&acirc;mpago</p>
             <p>Xhopii Blog</p>
             <p>Impresa</p>
         </section>
@@ -99,7 +123,7 @@
     <hr>
     <p class="rodape-copy">
         
-        © 2026 Xhopii. Todos os direitos acadêmicos reservados
+        &copy; 2026 Xhopii. Todos os direitos acad&ecirc;micos reservados
     </p>
     </footer>
 
